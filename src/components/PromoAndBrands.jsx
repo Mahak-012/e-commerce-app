@@ -7,6 +7,7 @@ export default function PromoAndBrands({ onProductSelect }) {
     { id: 3, title: "Women Sunglasses Retro", price: 22, rating: 4, brand: "Vogue", salesText: "Hot selling item", img: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop" },
     { id: 1, title: "Urban Runner Mesh Sneakers", price: 30, oldPrice: 31, discount: "-3%", rating: 5, brand: "Nike", salesText: "3 units sold recently", img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=600&auto=format&fit=crop" },
     { id: 5, title: "Structured Leather Tote Bag", price: 45, oldPrice: 60, discount: "-25%", rating: 5, brand: "Mahak", salesText: "New Arrival", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=600&auto=format&fit=crop" },
+    // Baseball Cap ki image yahan update ki gayi hai
     { id: 6, title: "Washed Canvas Baseball Cap", price: 9, oldPrice: 28, discount: "-68%", rating: 5, brand: "Urban", salesText: "Best Seller", img: "https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=600&auto=format&fit=crop" },
   ];
 
@@ -130,6 +131,7 @@ export default function PromoAndBrands({ onProductSelect }) {
         {/* ══════════ BRAND LOGOS STRIP ══════════ */}
         <div className="border-t border-neutral-200/50 py-8 lg:py-10">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8">
+
             <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center">
               {brandLogos.map((brand, i) => (
                 <div
@@ -153,6 +155,7 @@ export default function PromoAndBrands({ onProductSelect }) {
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </div>

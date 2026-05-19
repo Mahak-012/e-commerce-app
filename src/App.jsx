@@ -42,7 +42,8 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 font-sans overflow-x-hidden">
+    // YAHAN pt-24 add kiya gaya hai taaki content fixed navbar ke neeche se start ho
+    <div className="min-h-screen bg-white text-neutral-900 font-sans overflow-x-hidden pt-24">
       <Navbar />
       <CartDrawer />
 
@@ -58,10 +59,12 @@ function AppContent() {
               <Hero />
               <PopularProducts onProductSelect={handleProductSelect} />
               <PromoAndBrands onProductSelect={handleProductSelect} />
+              
               <DealOfTheWeek 
                 onProductSelect={handleProductSelect} 
                 onAddToCart={addToCart} 
               />
+              
               <ClientReviews />
               <StoreServices />
               <Footer />

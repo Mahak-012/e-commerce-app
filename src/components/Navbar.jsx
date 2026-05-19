@@ -10,7 +10,7 @@ export default function Navbar() {
   const closeMobile = () => setIsMobileOpen(false);
 
   return (
-    
+    // YAHAN fixed kar diya gaya hai
     <nav className="fixed top-0 left-0 w-full bg-white border-b border-gray-100 z-50 font-sans select-none">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-12">
         <div className="grid grid-cols-12 items-center h-24">
@@ -68,7 +68,7 @@ export default function Navbar() {
                       </ul>
                     </div>
                     <div className="col-span-3">
-                      <h4 className="font-semibold text-[11px] uppercase tracking-[0.2em] text-black mb-6 border-b border-neutral-100 pb-3">Product Features</h4>
+                      <h4 className="font-semibold text-[11px] uppercase tracking-[0.2em] text-black mb-6 border-b border-neutral-100 pb-3">Product Feature</h4>
                       <ul className="space-y-3.5 text-xs text-neutral-500 font-light tracking-wide">
                         <li><Link to="/shop?feature=stock" className="hover:text-black transition-colors duration-200">Stock Progress Bar</Link></li>
                         <li><Link to="/shop?feature=swatches" className="hover:text-black transition-colors duration-200">Color/Image Swatches</Link></li>

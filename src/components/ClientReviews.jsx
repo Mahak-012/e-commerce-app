@@ -11,7 +11,6 @@ export default function ClientReviews() {
       comment: "Absolutely in love with the premium quality of the handbag! The stitching is flawless, and it looks even more elegant in person. Delivery was super fast too. Will definitely shop again!",
       img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150"
     },
-    
     {
       id: 2,
       name: "David Miller",

@@ -2,7 +2,7 @@ import React from 'react';
 import { Truck, ShieldCheck, Tag, Headphones } from 'lucide-react';
 
 export default function StoreServices() {
-
+  // Ultra-Professional localized core services data matching high-end boutique standards
   const services = [
     {
       id: 1,
