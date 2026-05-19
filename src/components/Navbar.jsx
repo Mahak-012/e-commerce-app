@@ -10,7 +10,7 @@ export default function Navbar() {
   const closeMobile = () => setIsMobileOpen(false);
 
   return (
-    // YAHAN fixed kar diya gaya hai
+    
     <nav className="fixed top-0 left-0 w-full bg-white border-b border-gray-100 z-50 font-sans select-none">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-12">
         <div className="grid grid-cols-12 items-center h-24">

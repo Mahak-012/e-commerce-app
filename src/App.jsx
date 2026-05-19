@@ -42,8 +42,7 @@ function AppContent() {
   };
 
   return (
-    // YAHAN pt-24 add kiya gaya hai taaki content fixed navbar ke neeche se start ho
-    <div className="min-h-screen bg-white text-neutral-900 font-sans overflow-x-hidden pt-24">
+    <div className="min-h-screen bg-white text-neutral-900 font-sans overflow-x-hidden">
       <Navbar />
       <CartDrawer />
 
@@ -51,30 +50,30 @@ function AppContent() {
 
         {/* HOME */}
         <Route path="/" element={
-          <div className="relative">
+          <div className="relative min-h-screen">
+            {/* Main Content */}
             <div className={`w-full transition-all duration-500 ease-out ${
               viewingProduct ? '-translate-x-full opacity-0 absolute pointer-events-none' : 'translate-x-0 opacity-100'
             }`}>
               <Hero />
               <PopularProducts onProductSelect={handleProductSelect} />
               <PromoAndBrands onProductSelect={handleProductSelect} />
-              
               <DealOfTheWeek 
                 onProductSelect={handleProductSelect} 
                 onAddToCart={addToCart} 
               />
-              
               <ClientReviews />
               <StoreServices />
               <Footer />
             </div>
 
+            {/* Product Detail Modal - WITHOUT FOOTER */}
             {viewingProduct && (
-              <div className={`w-full bg-white absolute top-0 left-0 transition-transform duration-500 ease-out transform z-30 ${
+              <div className={`w-full fixed inset-0 z-50 bg-white overflow-y-auto transition-transform duration-500 ease-out transform ${
                 slideIn ? 'translate-x-0' : 'translate-x-full'
               }`}>
                 <ProductDetail product={viewingProduct} onBack={handleBack} />
-                <Footer />
+                {/* 🚀 FIX: Removed Footer from here */}
               </div>
             )}
           </div>
