@@ -1,47 +1,65 @@
-🛒 E-Commerce Website (Mahak Couture)
-📌 Note: This e-commerce store is built as a practice project to demonstrate my frontend skills. I can absolutely build a custom, fully-functional e-commerce website tailored to your specific business requirements!
+# 🛒 Mahak Couture — E-Commerce Website
 
-Check out the live application here: https://e-commerce-app-eta-dun.vercel.app/
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-pink?style=for-the-badge&logo=vercel&logoColor=white)](https://e-commerce-app-eta-dun.vercel.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahak-webdev/)
+[![GitHub](https://img.shields.io/badge/GitHub-Mahak--012-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mahak-012)
 
-📖 About The Project
-A fully responsive and interactive e-commerce platform built with modern frontend technologies. This project demonstrates my ability to create clean UI, manage global state, and handle dynamic data filtering.
+---
 
-✨ Key Features
-Product Filtering: Easily filter products based on categories.
-Cart Functionality: Add to cart, remove from cart, and adjust item quantities.
-Responsive Design: Looks great on desktops, tablets, and mobile devices.
-State Management: Efficiently managed global state using Context API.
-Smooth UI/UX: Clean layout with hover effects and intuitive navigation.
+## 📖 About
 
+A fully responsive and interactive **e-commerce platform** built with modern frontend technologies.
 
-🛠️ Tech Stack
-React.js (Frontend Library)
-Tailwind CSS (Styling)
-Context API (State Management)
-Vercel (Deployment)
+Clean UI, dynamic product filtering, and smooth cart management — all powered by **React** and **Context API** for global state management.
 
+---
 
-🚀 Run Locally
-If you want to run this project on your local machine, follow these steps:
+## ✨ Features
 
-Clone the project
+- 🛍️ **Product Filtering** — filter products by category instantly
+- 🛒 **Cart Functionality** — add, remove, and adjust item quantities
+- 📱 **Fully Responsive** — looks great on desktop, tablet, and mobile
+- ⚡ **State Management** — global state handled efficiently via Context API
+- 🎨 **Smooth UI/UX** — clean layout with hover effects and intuitive navigation
+
+---
+
+## 🛠️ Tech Stack
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Context API](https://img.shields.io/badge/Context_API-State%20Management-blueviolet?style=for-the-badge)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
+---
+
+## 🚀 Run Locally
+
+```bash
+# Clone the repository
 git clone https://github.com/Mahak-012/e-commerce-app.git
-Go to the project directory
-bash
 
+# Go to project directory
 cd e-commerce-app
-Install dependencies
-bash
 
+# Install dependencies
 npm install
-Start the development server
-bash
 
+# Start development server
 npm run dev
-📬 Get In Touch
-If you have a project requirement or want to collaborate, feel free to reach out!
+```
 
+---
 
-LinkedIn: https://www.linkedin.com/in/mahak-webdev/
-Email: mahakmimi01@gmail.com
+## 📬 Connect With Me
 
+| Platform | Link |
+|----------|------|
+| 🌐 Live Demo | [e-commerce-app-eta-dun.vercel.app](https://e-commerce-app-eta-dun.vercel.app/) |
+| 💼 LinkedIn | [linkedin.com/in/mahak-webdev](https://www.linkedin.com/in/mahak-webdev/) |
+| 🐙 GitHub | [github.com/Mahak-012](https://github.com/Mahak-012) |
+| 📧 Email | mahakmimi01@gmail.com |
+
+---
+
+<p align="center">Made with 💜 by Mahak</p>
