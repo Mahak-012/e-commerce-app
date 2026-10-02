@@ -8,7 +8,6 @@ const dealProducts = [
   { id: 2, title: "Premium Oxford Button-Down Shirt", price: 19, oldPrice: 55, rating: 5, brand: "Mahak Culture", img: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=600&auto=format&fit=crop" },
   { id: 3, title: "Retro Aviator Polarized Sunglasses", price: 15, oldPrice: 42, rating: 4, brand: "Mahak Culture", img: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop" },
   { id: 4, title: "Urban Runner Pro Mesh Sneakers", price: 35, oldPrice: 95, rating: 5, brand: "Mahak Culture", img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=600&auto=format&fit=crop" },
-  // 2. Baseball Cap ki image link yahan update ki gayi hai
   { id: 5, title: "Washed Canvas Baseball Cap", price: 9, oldPrice: 28, rating: 5, brand: "Mahak Culture", img: "https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=600&auto=format&fit=crop" },
   { id: 6, title: "Structured Mini Top Handle Bag", price: 25, oldPrice: 72, rating: 4, brand: "Mahak Culture", img: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600&auto=format&fit=crop" },
   { id: 7, title: "Slim Fit Mandarin Collar Shirt", price: 17, oldPrice: 48, rating: 5, brand: "Mahak Culture", img: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=600&auto=format&fit=crop" },
@@ -16,7 +15,6 @@ const dealProducts = [
 ];
 
 export default function TopDeals() {
-  // 3. CartContext se addToCart function nikala
   const { addToCart } = useCart();
 
   return (

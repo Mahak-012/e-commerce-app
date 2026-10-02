@@ -9,7 +9,6 @@ const products = [
   { id: 2, title: "Minimalist Leather Tote", price: 185, oldPrice: 220, rating: 5, brand: "Mahak Couture", img: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600&auto=format&fit=crop" },
   { id: 3, title: "Urban Runner Mesh Sneakers", price: 95, oldPrice: 140, rating: 5, brand: "Mahak Couture", img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=600&auto=format&fit=crop" },
   { id: 4, title: "Retro Aviator Sunglasses", price: 42, oldPrice: 65, rating: 4, brand: "Mahak Couture", img: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop" },
-  // 1. Baseball Cap ki image link yahan update ki gayi hai
   { id: 5, title: "Washed Canvas Baseball Cap", price: 28, oldPrice: 42, rating: 5, brand: "Mahak Couture", img: "https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=600&auto=format&fit=crop" },
   { id: 6, title: "Emerald Gold Wrist Watch", price: 38, oldPrice: 45, rating: 5, brand: "Mahak Couture", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop" },
   { id: 7, title: "Suede Chelsea Ankle Boots", price: 210, rating: 5, brand: "Mahak Couture", img: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?q=80&w=600&auto=format&fit=crop" },
@@ -17,7 +16,7 @@ const products = [
 ];
 
 export default function Products() {
-  // 2. CartContext se addToCart function nikala
+  
   const { addToCart } = useCart();
 
   return (
