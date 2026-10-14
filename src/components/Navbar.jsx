@@ -7,7 +7,6 @@ import {
 } from 'lucide-react';
 import { CART_KEY, WISH_KEY, readStore, updateQty, removeFromCart } from '../lib/store';
 
-/* ── Demo products (search ke liye — baad mein apne real products se replace karna) ── */
 const PRODUCTS = [
   { id: 1, name: 'ADRO Men Hoodie',       price: 23, cat: 'Casual', img: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=200&auto=format&fit=crop' },
   { id: 2, name: 'Stylish Sunglasses',    price: 22, cat: 'Accessories', img: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=200&auto=format&fit=crop' },
@@ -23,7 +22,6 @@ const ANNOUNCEMENTS = [
   'EASY 7-DAY RETURNS · 100% AUTHENTIC',
 ];
 
-/* ═══════════════ NAVBAR ═══════════════ */
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -41,7 +39,6 @@ export default function Navbar() {
   const navigate = useNavigate();
   const searchRef = useRef(null);
 
-  /* ── Scroll: shrink + shadow ── */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
     onScroll();
@@ -49,7 +46,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  /* ── Live store sync ── */
   useEffect(() => {
     const sync = () => {
       setCart(readStore(CART_KEY));
@@ -63,24 +59,20 @@ export default function Navbar() {
     };
   }, []);
 
-  /* ── Route change: close everything ── */
   useEffect(() => {
     setActiveMenu(null); setIsMobileOpen(false); setIsCartOpen(false); setIsUserOpen(false);
   }, [location.pathname]);
 
-  /* ── Announcement rotation ── */
   useEffect(() => {
     const t = setInterval(() => setAnnIdx((i) => (i + 1) % ANNOUNCEMENTS.length), 4000);
     return () => clearInterval(t);
   }, []);
 
-  /* ── Body scroll lock for overlays ── */
   useEffect(() => {
     document.body.style.overflow = (isMobileOpen || isSearchOpen || isCartOpen) ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [isMobileOpen, isSearchOpen, isCartOpen]);
 
-  /* ── Search overlay: autofocus + ESC ── */
   useEffect(() => {
     if (isSearchOpen) setTimeout(() => searchRef.current?.focus(), 100);
     const onKey = (e) => { if (e.key === 'Escape') setIsSearchOpen(false); };
@@ -97,7 +89,6 @@ export default function Navbar() {
 
   const linkCls = `relative text-xs font-semibold uppercase tracking-[0.15em] whitespace-nowrap transition-colors duration-300 after:absolute after:-bottom-1.5 after:left-0 after:h-[1.5px] after:bg-black after:transition-all after:duration-300 ${activeMenu ? 'text-black' : 'hover:text-neutral-500 after:w-0 hover:after:w-full'}`;
 
-  /* ── Mega menu wrapper ── */
   const Mega = ({ id, children, label, badge, badgeCls }) => (
     <div className="relative py-8" onMouseEnter={() => setActiveMenu(id)} onMouseLeave={() => setActiveMenu(null)}>
       <Link to={`/${id}`} className={`${linkCls} flex items-center gap-1 cursor-pointer after:content-['']`}>
@@ -150,7 +141,6 @@ export default function Navbar() {
         .nav-shrink { --nav-total: 78px; }
       `}</style>
 
-      {/* ═══ ANNOUNCEMENT BAR ═══ */}
       <div className={`bg-black text-white overflow-hidden transition-all duration-500 ${scrolled ? 'h-0 opacity-0' : 'h-8 opacity-100'}`}>
         <div className="max-w-[1440px] mx-auto px-6 h-8 flex items-center justify-center relative">
           <AnimatePresence mode="wait">
@@ -166,24 +156,21 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className={`max-w-[1440px] mx-auto px-6 sm:px-12 transition-all duration-500 ${scrolled ? 'h-[72px]' : 'h-24'}`}>
+      <div className={`max-w-[1440px] mx-auto px-4 sm:px-12 transition-all duration-500 ${scrolled ? 'h-[72px]' : 'h-20 sm:h-24'}`}>
         <div className="grid grid-cols-12 items-center h-full">
 
-          {/* ═══ LEFT: Logo ═══ */}
-          <div className="col-span-6 lg:col-span-3 flex items-center">
-            <button className="lg:hidden text-gray-900 hover:opacity-70 transition-opacity mr-4" onClick={() => setIsMobileOpen(true)} aria-label="Open menu">
+          <div className="col-span-6 lg:col-span-3 flex items-center min-w-0">
+            <button className="lg:hidden text-gray-900 hover:opacity-70 transition-opacity mr-3 sm:mr-4 shrink-0" onClick={() => setIsMobileOpen(true)} aria-label="Open menu">
               <Menu className="w-6 h-6 stroke-[1.5]" />
             </button>
-            <Link to="/" className="text-xl sm:text-2xl font-semibold tracking-[0.25em] text-black hover:opacity-80 transition-opacity whitespace-nowrap" style={{ fontFamily: "'Playfair Display', 'Didot', serif" }}>
-              MAHAK<span className="font-light text-gray-300 ml-1">COUTURE</span>
+            <Link to="/" className="text-[15px] sm:text-2xl font-semibold tracking-[0.12em] sm:tracking-[0.25em] text-black hover:opacity-80 transition-opacity whitespace-nowrap min-w-0" style={{ fontFamily: "'Playfair Display', 'Didot', serif" }}>
+              MAHAK<span className="font-light text-gray-300 ml-0.5 sm:ml-1">COUTURE</span>
             </Link>
           </div>
 
-          {/* ═══ CENTER: Links ═══ */}
           <div className="hidden lg:flex justify-center items-center gap-8 col-span-6">
             <Link to="/" className={linkCls}>Home</Link>
 
-            {/* SHOP */}
             <Mega id="shop" label="Shop">
               <div className="grid grid-cols-12 gap-10">
                 <MenuCol title="Product Types" items={[
@@ -214,7 +201,6 @@ export default function Navbar() {
               </div>
             </Mega>
 
-            {/* CATEGORIES */}
             <Mega id="categories" label="Categories" badge="SALE" badgeCls="bg-[#2ec4b6]">
               <div className="grid grid-cols-12 gap-10">
                 <MenuCol title="Casual" items={[
@@ -251,14 +237,11 @@ export default function Navbar() {
             <Link to="/top-deals" className={linkCls}>Top Deals</Link>
           </div>
 
-          {/* ═══ RIGHT: Actions ═══ */}
-          <div className="col-span-6 lg:col-span-3 flex items-center justify-end gap-5">
-
+          <div className="col-span-6 lg:col-span-3 flex items-center justify-end gap-4 sm:gap-5">
             <button onClick={() => setIsSearchOpen(true)} aria-label="Search" className="text-neutral-800 hover:text-neutral-400 transition-colors">
               <Search className="w-[19px] h-[19px] stroke-[1.5]" />
             </button>
 
-            {/* USER dropdown */}
             <div className="relative">
               <button onClick={() => setIsUserOpen((o) => !o)} aria-label="Account" className="text-neutral-800 hover:text-neutral-400 transition-colors">
                 <User className="w-[19px] h-[19px] stroke-[1.5]" />
@@ -299,7 +282,6 @@ export default function Navbar() {
               )}
             </Link>
 
-            {/* CART — opens mini drawer */}
             <button onClick={() => setIsCartOpen(true)} className="relative group" aria-label="Cart">
               <ShoppingBag className="w-[19px] h-[19px] group-hover:text-neutral-400 transition-colors stroke-[1.5]" />
               {cartCount > 0 && (
@@ -313,7 +295,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ═══ FULL-SCREEN SEARCH ═══ */}
       <AnimatePresence>
         {isSearchOpen && (
           <motion.div
@@ -336,7 +317,6 @@ export default function Navbar() {
                 </button>
               </div>
 
-              {/* Popular chips */}
               {!query && (
                 <div className="mt-8">
                   <p className="text-[10px] uppercase tracking-[0.25em] text-neutral-400 font-semibold mb-4">Popular Searches</p>
@@ -348,7 +328,6 @@ export default function Navbar() {
                 </div>
               )}
 
-              {/* Live results */}
               {query && (
                 <div className="mt-8 max-h-[55vh] overflow-y-auto">
                   <p className="text-[10px] uppercase tracking-[0.25em] text-neutral-400 font-semibold mb-4">
@@ -375,7 +354,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* ═══ MINI CART DRAWER ═══ */}
       <AnimatePresence>
         {isCartOpen && (
           <>
@@ -457,7 +435,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* ═══ MOBILE DRAWER ═══ */}
       <AnimatePresence>
         {isMobileOpen && (
           <>

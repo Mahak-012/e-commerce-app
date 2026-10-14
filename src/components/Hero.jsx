@@ -15,8 +15,8 @@ const sliderData = [
     buttonText: 'DISCOVER THE LOOK',
     buttonLink: '/shop',
     bgImage: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=100',
-    // ── Lighting: har slide ka apna darkness level ──
-    overlay: 'from-black/30 via-black/10 to-transparent',   // pehli slide: HALKA
+    
+    overlay: 'from-black/30 via-black/10 to-transparent',   
   },
   {
     id: 2,

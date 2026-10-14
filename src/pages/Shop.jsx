@@ -36,7 +36,7 @@ export default function Shop() {
   const [toast, setToast] = useState(null);
   const [detailProduct, setDetailProduct] = useState(null);
 
-  /* URL se category sync (Categories page ke links se aata hai) */
+  
   const setCategory = (cat) => {
     if (cat === 'all') searchParams.delete('cat');
     else searchParams.set('cat', cat);
